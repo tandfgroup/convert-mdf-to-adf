@@ -1,0 +1,17 @@
+{
+  "name": "md-to-adf",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "package": "ncc build index.js -o dist"
+  },
+  "author": "Akhil",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.10.0",
+    "@vercel/ncc": "^0.36.1",
+    "md-to-adf": "^0.6.4"
+  }
+}

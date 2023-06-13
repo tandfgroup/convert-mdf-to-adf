@@ -1,0 +1,14 @@
+name: md-to-adf
+author: Akhilendu
+description: Convert "md" format text to ADF(atlassian document format)
+inputs:
+  text:
+    description: "text to convert"
+    required: true
+    default: ""
+outputs:
+  value:
+    description: "ADF text"
+runs:
+  using: node12
+  main: "dist/index.js"
