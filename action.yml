@@ -1,14 +1,17 @@
-name: md-to-adf
-author: Akhilendu
-description: Convert "md" format text to ADF(atlassian document format)
+name: 'Convert Markdown text Atlassian Document Format'
+description: 'Convert "md" format text to ADF(atlassian document format) using md-to-adf- lib'
+author: 'Akhilendu'
+branding:
+  icon: file-text
+  color: blue
 inputs:
-  text:
+  md-text:
     description: "text to convert"
     required: true
     default: ""
 outputs:
-  value:
-    description: "ADF text"
+  adf-output:
+    description: "ADF text output"
 runs:
-  using: node12
+  using: node16
   main: "dist/index.js"

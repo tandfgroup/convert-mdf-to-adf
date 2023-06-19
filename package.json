@@ -1,17 +1,22 @@
 {
-  "name": "md-to-adf",
+  "name": "convert-md-to-adf",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "package": "ncc build index.js -o dist"
+    "build": "tsc",
+    "pack": "ncc build ./src/index.ts -o dist",
+    "all": "npm run build && npm run pack"
   },
   "author": "Akhil",
   "license": "MIT",
   "dependencies": {
     "@actions/core": "^1.10.0",
     "@vercel/ncc": "^0.36.1",
-    "md-to-adf": "^0.6.4"
+    "md-to-adf": "^0.6.4",
+    "typescript": "^5.1.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.3.1"
   }
 }

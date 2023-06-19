@@ -1,0 +1,34 @@
+name: "Convert md to ADF"
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+      - "releases/*"
+
+jobs:
+  test-local:
+  # run with "act" in repo directory
+    name: converting md-to-adf
+    runs-on: ubuntu-latest
+    steps:
+       # Clone this repo
+      - name: Checkout
+        uses: actions/checkout@v3
+      - uses: ./
+        id: convert
+        with:
+          md-text: "# DiscoveryClientWebsites   asd "
+      - run: |
+          echo "app=${{ steps.convert.outputs.adf-output}}"
+
+  test:
+    name: converting md-to-adf from repo
+    runs-on: ubuntu-latest
+    steps:
+      - uses: tandfgroup/convert-md-to-adf@1.0.0
+        id: convert
+        with:
+          md-text: "# DiscoveryClientWebsites  asdasd "
+      - run: |
+          echo "app=${{ steps.convert.outputs.adf-output}}"
